@@ -19,3 +19,9 @@ exports.isPlainObject = function isPlainObject(obj) {
     typeof obj === "object" && Object.getPrototypeOf(obj) === Object.prototype
   );
 };
+
+exports.isWindow = function isWindow(obj) {
+  return /^\[object (Window|DOMWindow|global)\]$/.test(
+    Object.prototype.toString.call(obj)
+  );
+};
