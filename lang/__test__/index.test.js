@@ -1,6 +1,4 @@
-const isNaN = require("../is-nan");
-const isNull = require("../is-null");
-const isUndefined = require("../is-undefined");
+const { isNaN, isNull, isUndefined } = require("../index");
 const { test } = require("ava");
 
 test("isNaN", t => {
