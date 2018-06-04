@@ -1,4 +1,10 @@
-const { isNaN, isNull, isUndefined, isPlainObject } = require("../index");
+const {
+  isNaN,
+  isNull,
+  isUndefined,
+  isPlainObject,
+  isArrayLike
+} = require("../index");
 const { test } = require("ava");
 
 test("isNaN", t => {
@@ -29,4 +35,12 @@ test("isPlainObject", t => {
   class Person {}
   const p = new Person();
   t.is(isPlainObject(p), false);
+});
+
+test("isArrayLike", t => {
+  t.is(isArrayLike([]), true);
+  t.is(isArrayLike({ length: 0 }), true);
+  t.is(isArrayLike(new Map()), true);
+  t.is(isArrayLike(new Set()), true);
+  t.is(isArrayLike(arguments), true);
 });
