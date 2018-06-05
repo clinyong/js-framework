@@ -1,3 +1,3 @@
-module.exports = function isArray(arr) {
+exports.isArray = function isArray(arr) {
   return Object.prototype.toString.call(arr) === "[object Array]";
 };

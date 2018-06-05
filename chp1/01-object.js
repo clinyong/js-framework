@@ -1,4 +1,4 @@
-module.exports = function assign(target, ...rest) {
+exports.assign = function assign(target, ...rest) {
   if (target == null) {
     throw new TypeError("Cannot convert undefined or null to object");
   }
@@ -12,4 +12,16 @@ module.exports = function assign(target, ...rest) {
   });
 
   return to;
+};
+
+exports.keys = function keys(obj) {
+  const list = [];
+
+  for (let i in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, i)) {
+      list.push(i);
+    }
+  }
+
+  return list;
 };

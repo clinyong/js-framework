@@ -4,7 +4,7 @@ const {
   isUndefined,
   isPlainObject,
   isArrayLike
-} = require("../index");
+} = require("../03-is");
 const { test } = require("ava");
 
 test("isNaN", t => {

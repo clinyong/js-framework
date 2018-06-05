@@ -1,4 +1,4 @@
-const isArray = require("../is-array");
+const { isArray } = require("../02-array");
 const { test } = require("ava");
 
 test("Array.isArray", t => {
